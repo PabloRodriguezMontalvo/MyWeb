@@ -17,7 +17,12 @@
     <link rel="apple-touch-icon" href="images/ico/apple-touch-icon.png" />
 
     <!-- SCRIPTS -->
+
     <script type="text/javascript" src="js/modernizr.js"></script>
+
+    <script type="text/javascript" src="js/js.cookie.js"></script>
+        <script type="text/javascript" src="js/cookie.js"></script>
+
     <!--[if lte IE 9]>
         <script src="js/html5shiv.js"></script>
         <script src="js/selectivizr-min.js"></script>
@@ -73,7 +78,7 @@
                 <nav>
                     <ul>
                         <li><a href='#/home'></a></li>
-                        <li><a href='#/adver'></a></li>
+                        <li><a href='#/resume'></a></li>
 
                         <!-- <li><a href='#/resume'></a></li>-->
                         <li><a href='#/preguntas'></a></li>
@@ -135,7 +140,7 @@
                                     <!-- extra titles --
                                         
                                         <!-- open link -->
-                                    <a href="#/adver" class="rm-button-open ribbon">
+                                    <a href="#/resume" class="rm-button-open ribbon">
                                         <!-- <a href="#/resume" class="rm-button-open ribbon"> -->
                                         <span class="ribbon-stitches-top"></span>
                                         <strong class="ribbon-content">Leer</strong>
@@ -199,8 +204,7 @@
 
 
                     <!-- ADVER PAGE -->
-                    <!-- <div id="resume" class="rm-back page"> -->
-                    <div id="resume" class="rm-back page" style="display:none">
+                <div id="resume"  style="display:none"> 
                         <!-- .antiscroll-wrap -->
                         <div class="antiscroll-wrap">
                             <!-- .antiscroll-inner -->
@@ -646,8 +650,8 @@
 </div>
                                 <div class="col-sm-6">
                                         <div class="flipswitch">
-                                            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
-                                            <label class="flipswitch-label" for="fs">
+                                            <input type="checkbox" name="flipswitch1" class="flipswitch-cb" id="fs1" checked>
+                                            <label class="flipswitch-label" for="fs1">
         <div class="flipswitch-inner"></div>
         <div class="flipswitch-switch"></div>
      
@@ -663,8 +667,8 @@
 </div>
                                 <div class="col-sm-6">
                                         <div class="flipswitch">
-                                            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
-                                            <label class="flipswitch-label" for="fs">
+                                            <input type="checkbox" name="flipswitch2" class="flipswitch-cb" id="fs2" checked>
+                                            <label class="flipswitch-label" for="fs2">
         <div class="flipswitch-inner"></div>
         <div class="flipswitch-switch"></div>
      
@@ -680,8 +684,8 @@
 </div>
                                 <div class="col-sm-6">
                                         <div class="flipswitch">
-                                            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
-                                            <label class="flipswitch-label" for="fs">
+                                            <input type="checkbox" name="flipswitch3" class="flipswitch-cb" id="fs3" checked>
+                                            <label class="flipswitch-label" for="fs3">
         <div class="flipswitch-inner"></div>
         <div class="flipswitch-switch"></div>
      
@@ -697,8 +701,8 @@
 </div>
                                 <div class="col-sm-6">
                                         <div class="flipswitch">
-                                            <input type="checkbox" name="flipswitch" class="flipswitch-cb" id="fs" checked>
-                                            <label class="flipswitch-label" for="fs">
+                                            <input type="checkbox" name="flipswitch4" class="flipswitch-cb" id="fs4" checked>
+                                            <label class="flipswitch-label" for="fs4">
         <div class="flipswitch-inner"></div>
         <div class="flipswitch-switch"></div>
      
@@ -713,8 +717,8 @@
                                 <label>Posición</label>
 </div>
                                 <div class="col-sm-6">
-                                 <select>
-  <option value="pro">Programador Junior</option>
+                                 <select id="posicion">
+  <option value="jun">Programador Junior</option>
   <option value="sen">Programador Senior</option>
   <option value="anal">Analista programador</option>
     <option value="full">Full-Stack developer</option>
@@ -727,10 +731,10 @@
  <div class="row top-buffer">
 
                                     <div class="col-sm-6">
-                                <label>Salario <u>MÍNIMO</u> de la oferta.</label>
+                                <label>Salario de la oferta.</label>
 </div>
                                 <div class="col-sm-6">
-                                 <select>
+                                 <select id="salario">
   <option value="20">20.000€ - 25.000€</option>
   <option value="25">25.000€ - 30.000€</option>
   <option value="30">30.000€ - 35.000€</option>
@@ -741,24 +745,6 @@
                                         </div>
 
                                     </div>
- <div class="row top-buffer">
-
-                                    <div class="col-sm-6">
-                                <label>Salario <u>MÁXIMO</u> de la oferta.</label>
-</div>
-                                <div class="col-sm-6">
-                                        <select>
-  <option value="20">20.000€ - 25.000€</option>
-  <option value="25">25.000€ - 30.000€</option>
-  <option value="30">30.000€ - 35.000€</option>
-    <option value="35">35.000€ - 40.000€</option>
-  <option value="val">Según valía</option>
-</select>
-
-                                        </div>
-
-                                    </div>
-
  <div class="row top-buffer">
 
                                     <div class="col-sm-6">
@@ -802,7 +788,7 @@
 
                                     </div>
                                     <p>
-<button type="button" class="submit" style="float:right !important; margin-bottom:20px" onclick="alert('Hello world!')">¡Enviar!</button>
+<button type="button" class="submit" style="float:right !important; margin-bottom:20px" id="envioPreguntas">¡Enviar!</button>
 </p>
                                 </div>
                                 <!-- CONTENT -->
@@ -1190,6 +1176,7 @@
     <script src="js/twitterFetcher_v10_min.js"></script>
     <script src="js/main.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/quest.js"></script>
 
     <script>
         $(".lightbox").fancybox({
