@@ -33,7 +33,7 @@
 		
 		$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
 		
-		$headers = 'From: ' . $name . ' <' . $email . '> ' . "\r\n" . 'Reply-To: ' . $email;
+		$headers = 'From: ' . $name . ' <' . $email . '> ' . "\r\n" . 'Reply-To: ' . $email . 'MIME-Version: 1.0' . "\r\n" . 'Content-type: text/plain; charset=UTF-8' . "\r\n";
 		
 		mail( $to, $subject, $body, $headers );
 		
