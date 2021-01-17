@@ -1,0 +1,233 @@
+
+                    <!-- .rm-inner -->
+                    <div class="rm-inner">
+
+
+                        <!-- .antiscroll-wrap -->
+                        <div class="antiscroll-wrap">
+                            <!-- .antiscroll-inner -->
+                            <div class="antiscroll-inner">
+
+
+
+
+                                <!-- CONTENT -->
+                                <div class="content">
+
+
+                                    <h2><span>CERTIFICACIONES</span></h2>
+
+
+                                    <!--FILTERS-->
+                                    <ul id="filters">
+                                        <li class="current"><a href="#" data-filter="*">TODO</a></li>
+                                        <li><a href="#" data-filter=".coding">IT</a></li>
+                                        <li><a href="#" data-filter=".design">DISEÑO</a></li>
+                                        <li><a href="#" data-filter=".logo">OTROS</a></li>
+                                    </ul>
+                                    <!--FILTERS-->
+
+
+
+                                    <!-- PORTFOLIO -->
+                                    <div class="portfolio-items">
+
+
+
+                                        <!-- portfolio-item -->
+                                        <div class="coding hentry">
+                                            <div class="media-box">
+                                                <img src="images/ms/html5t.png" alt="portfolio-post">
+                                                <div class="mask">
+                                                    <!-- lightbox - image -->
+                                                    <a href="images/MCPDigitalCertPDF/certificate_4.pdf" title="PROGRAMMING IN HTML5 WITH JAVASCRIPT AND CSS3 SPECIALIST" data-fancybox-type="iframe"
+                                                        class="lightbox"></a>
+                                                    <!-- lightbox - image -->
+                                                </div>
+                                            </div>
+                                            <h4>MCSD</h4>
+                                            <p class="category">PROGRAMMING IN HTML5 WITH JAVASCRIPT AND CSS3 SPECIALIST</p>
+                                        </div>
+                                        <!-- portfolio-item -->
+
+
+                                        <!-- portfolio-item -->
+                                        <div class="coding hentry">
+                                            <div class="media-box">
+                                                <img src="images/MCSD/MCSD_png-pdf/webapp.png" alt="portfolio-post">
+                                                <div class="mask">
+
+                                                    <!-- lightbox - image -->
+                                                    <a href="images/MCPDigitalCertPDF/certificate_2.pdf" title="ASP.NET MVC WEB APPLICATIONS" data-fancybox-type="iframe" class="lightbox"></a>
+                                                    <!-- lightbox - image -->
+
+                                                </div>
+                                            </div>
+                                            <h4>MCSD</h4>
+                                            <p class="category">ASP.NET MVC WEB APPLICATIONS</p>
+                                        </div>
+                                        <!-- portfolio-item -->
+                                        <!-- portfolio-item -->
+                                        <div class="coding hentry">
+                                            <div class="media-box">
+                                                <img src="images/MCSD/MCSD_png-pdf/WStore.png" alt="portfolio-post">
+                                                <div class="mask">
+
+                                                    <!-- lightbox - image -->
+                                                    <a href="images/MCPDigitalCertPDF/certificate_1.pdf" title="WINDOWS STORE APPS USING HTML5" data-fancybox-type="iframe" class="lightbox"></a>
+                                                    <!-- lightbox - image -->
+
+                                                </div>
+                                            </div>
+                                            <h4>MCSD</h4>
+                                            <p class="category">WINDOWS STORE APPS USING HTML5</p>
+                                        </div>
+                                        <!-- portfolio-item -->
+
+
+                                        <!-- portfolio-item - lightbox video -->
+                                        <div class="coding hentry">
+                                            <div class="media-box">
+                                                <img src="images/mCPS/MS.png" alt="portfolio-post">
+                                                <div class="mask">
+
+                                                    <!-- lightbox - image -->
+                                                    <a href="images/MCPDigitalCertPDF/certificate_3.pdf" title="MICROSOFT CERTIFIED PROFESSIONAL" data-fancybox-type="iframe"
+                                                        class="lightbox"></a>
+                                                    <!-- lightbox - image -->
+
+                                                </div>
+                                            </div>
+                                            <h4>MCP</h4>
+                                            <p class="category">MICROSOFT CERTIFIED PROFESSIONAL</p>
+                                        </div>
+                                        <!-- portfolio-item - lightbox video -->
+
+
+
+                                    </div>
+                                    <!-- PORTFOLIO -->
+
+
+
+
+
+
+                                </div>
+                                <!-- CONTENT -->
+
+
+
+                            </div>
+                            <!-- .antiscroll-inner -->
+                        </div>
+                        <!-- .antiscroll-wrap -->
+
+
+                        <div class="rm-overlay"></div>
+
+                    </div>
+                    <!-- /rm-inner -->
+ <script>
+      var safeMod = false;
+      	function setMasonry() {
+		
+		if ($container.data('isotope')) {
+		
+			var containerW = $container.width();
+			var items = $container.children('.hentry');
+			var columns, columnWidth;
+			var viewports = [ {
+					width : 1200,
+					columns : 5
+				}, {
+					width : 900,
+					columns : 4
+				}, {
+					width : 600,
+					columns : 3
+				}, { 
+					width : 320,
+					columns : 2
+				}, { 
+					width : 0,
+					columns : 1
+				} ];
+		
+			for( var i = 0, len = viewports.length; i < len; ++i ) {
+		
+				var viewport = viewports[i];
+		
+				if( containerW > viewport.width ) {
+		
+					columns = viewport.columns;
+					break;
+		
+				}
+			}
+		
+			// set the widths (%) for each of item
+			items.each(function(index, element) {
+				var multiplier = $(this).hasClass('x2') && columns > 1 ? 2 : 1;
+				var itemWidth = (Math.floor( containerW / columns ) * 100 / containerW) * multiplier ;
+				$(this).css( 'width', itemWidth + '%' );
+			});
+		
+			columnWidth = Math.floor( containerW / columns );
+			$container.isotope().isotope( 'option', { masonry: { columnWidth: columnWidth } } );
+		
+		}
+	
+	}
+	// ------------------------------
+	
+     $(document).ready(function(){
+	$container = $('.portfolio-items');
+		
+		// detect chrome for css3 flashing fix
+		$.browser.chrome = /chrome/.test(navigator.userAgent.toLowerCase()); 
+		if(!$.browser.chrome || safeMod) {
+			$('html').addClass('no-chrome');
+		}
+		$.browser.safari = ($.browser.webkit && !(/chrome/.test(navigator.userAgent.toLowerCase())));
+
+		animEngine = ($.browser.chrome || $.browser.safari) && !safeMod ? 'jquery' : 'best-available';
+		
+		if($container.length) {
+			$container.imagesLoaded(function() {
+				
+				// initialize isotope
+				$container.isotope({
+				  itemSelector : '.hentry',
+				  layoutMode : 'fitRows'
+				  //animationEngine : animEngine
+				});
+				
+				
+				// filters
+				if ($container.data('isotope')) {
+					var filters = $('#filters');
+					if(filters.length) {
+						filters.find('a').on("click", function() {
+							//alert('hoyt');
+							var selector = $(this).attr('data-filter');
+							  $container.isotope({ filter: selector });
+							  $(this).parent().addClass('current').siblings().removeClass('current');
+							  return false;
+						});
+					}
+				}
+				
+				setMasonry();
+				setTimeout(function() { $container.isotope(); }, 20);	
+				$(window).resize(function() {
+					setTimeout(function() { setMasonry(); }, 600);				
+				});
+				
+				
+				
+				
+			});
+		}
+     });
+</script>

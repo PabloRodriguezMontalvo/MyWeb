@@ -1,10 +1,12 @@
- var Lugar="";
-            var ClienteFinal="";
-            var Teletrabajo="";
-            var Posicion="";
-            var Parking="";
-            var Salario="";
-             var SalarioVariable="";
+var Lugar="";
+var ClienteFinal="";
+var Teletrabajo="";
+var Posicion="";
+var Parking="";
+var Salario="";
+var SalarioVariable="";
+var Justificacion="";
+var Otros="";
 $(document).ready(function(){
     
     $('#envioPreguntas').click(function(){
@@ -15,14 +17,15 @@ $(document).ready(function(){
         puntos+=getPuntosParking();
         puntos+=getPuntosPosicion();
         puntos+=getPuntosSalario();
-
-          resolver(puntos);
+        getTextoJustificacion();
+        getTextoOtros();
+        resolver(puntos);
 
     });
   });
 function resolver(puntos)
 {
-    if(puntos>5)
+    if(puntos>4)
         {
             desbloqueaCV();
         }
@@ -37,7 +40,7 @@ function resolver(puntos)
 function desbloqueaCV()
 { 
     var ip="";
- var req2 =$.getJSON("http://jsonip.com/?callback=?", function (data) {
+ var req2 =$.getJSON("https://jsonip.com/?callback=?", function (data) {
       
         ip=data.ip;
     });
@@ -45,9 +48,21 @@ function desbloqueaCV()
     $.when(req2).done(function(){
  Cookies.set(ip, 'si', { expires: 7 , path: '' });
 });
-   
-}
+$( "#resume" ).empty();
+ $.get('resume.html')
+             .success(function(data) {
+                 $('#resume').html(data);
+             });
+// $('#resume').load("resume.html",function(){ $('#resume').trigger('create'); });
 
+$( "#portfolio" ).empty();
+
+// $('#preguntas').load("portfolio.html",function(){ $('#preguntas').trigger('create'); });
+ $.get('portfolio.html')
+             .success(function(data) {
+                 $('#portfolio').html(data);
+             });
+ }
   function niegaEntrada()
 
   {
@@ -67,7 +82,7 @@ function desbloqueaCV()
   {
 
       var parametros = {
-                "message" : "Lugar:"+ Lugar +"\n\n Cliente Final:" +ClienteFinal+"\n\n Teletrabajo:" +Teletrabajo +"\n\Parking:" + Parking +"\n\nPosicion:" + Posicion+"\n\nPuntos:" + puntos,
+                "message" : "Lugar:"+ Lugar +"\n\n Cliente Final:" +ClienteFinal+"\n\n Teletrabajo:" +Teletrabajo +"\n\Parking:" + Parking +"\n\nPosicion:" + Posicion+"\n\nPuntos:" + puntos +"\n\Justificación:" + Justificacion+"\n\nOtras cosas:" + Otros,
                 "subject":"Cuestionario mi WEB",
                 "name":"Test",
                 "email":"Trabajo@MiWeb.com"
@@ -95,13 +110,15 @@ $.ajax({
        var $input = $('#fs1');
       if  ($input.prop( "checked" )==true)
         {
+                        Lugar="Madrid Sur";
+
             return 1;
-            Lugar="Madrid Sur";
         }
         else
             {
+                                Lugar="No es Madrid sur";
+
                 return 0;
-                Lugar="No es Madrid sur";
             }
   }
 
@@ -110,14 +127,16 @@ $.ajax({
        var $input = $('#fs2');
       if  ($input.prop( "checked" )==true)
         {
+                        ClienteFinal="Sí";
+
             return 1;
-            ClienteFinal="Sí";
 
         }
         else
             {
+                                ClienteFinal="No";
+
                 return 0;
-                ClienteFinal="No";
 
             }
   }  function getPuntosTeleTrabajar()
@@ -125,14 +144,16 @@ $.ajax({
        var $input = $('#fs3');
       if  ($input.prop( "checked" )==true)
         {
+                                    Teletrabajo="Sí";
+
             return 1;
-                        Teletrabajo="Sí";
 
         }
         else
             {
+                                            Teletrabajo="No";
+
                 return 0;
-                            Teletrabajo="No";
             }
   }
         function getPuntosParking()
@@ -140,13 +161,15 @@ $.ajax({
        var $input = $('#fs4');
       if  ($input.prop( "checked" )==true)
         {
+                        Parking="Sí";
+
             return 1;
-            Parking="Sí";
         }
         else
             {
+                                Parking="No";
+
                 return 0;
-                Parking="No";
             }
   }
 
@@ -155,29 +178,34 @@ $.ajax({
        var $input = $('#posicion');
       if  ($input.val()=="jun")
         {
+                         Posicion="Junior";
+
             return 0;
-             Posicion="Junior";
         }
         else if ($input.val()=="sen")
             {
+                                 Posicion="Senior";
+
                 return 1;
-                 Posicion="Senior";
             }
 
                else if ($input.val()=="anal")
             {
+                                 Posicion="Analista";
+
                 return 2;
-                 Posicion="Analista";
             }
                else if ($input.val()=="full")
             {
+                                 Posicion="FullStack";
+
                 return 2;
-                 Posicion="FullStack";
             }
             else
                 {
+                                         Posicion="Otro";
+
                     return 1;
-                     Posicion="Otro";
                 }
   }
 
@@ -186,29 +214,34 @@ $.ajax({
        var $input = $('#Salario');
       if  ($input.val()=="20")
         {
+                        Salario="20.000";
+
             return 0;
-            Salario="20.000";
         }
         else if ($input.val()=="25")
             {
+                                Salario="25.000";
+
                 return 1;
-                Salario="25.000";
             }
 
                else if ($input.val()=="30")
             {
+                                Salario="30.000";
+
                 return 2;
-                Salario="30.000";
             }
                else if ($input.val()=="35")
             {
+                                Salario="35.000";
+
                 return 3;
-                Salario="35.000";
             }
             else
                 {
+                                        Salario="Segun valía";
+
                     return 0;
-                    Salario="Segun valía";
                 }
   }
    function getPuntosSalarioVariable()
@@ -216,28 +249,44 @@ $.ajax({
        var $input = $('#variable');
       if  ($input.val()=="NoVariable")
         {
+                        SalarioVariable="No variable";
+
             return 0;
-            SalarioVariable="No variable";
         }
         else if ($input.val()=="10Variable")
             {
+                                SalarioVariable="10%";
+
                 return 1;
-                SalarioVariable="10%";
             }
 
                else if ($input.val()=="20Variable")
             {
+                                SalarioVariable="20%";
+
                 return 2;
-                SalarioVariable="20%";
             }
                else if ($input.val()=="30Variable")
             {
+                                SalarioVariable="30%";
+
                 return 3;
-                SalarioVariable="30%";
             }
             else
                 {
+                                        SalarioVariable="Por encima";
+
                     return 0;
-                    SalarioVariable="Por encima";
                 }
+  }
+             function getTextoJustificacion()
+  {
+       Justificacion = $('#Just').val();
+ 
+  }
+
+             function getTextoOtros()
+  {
+       Otros = $('#OtrosC').val();
+ 
   }
