@@ -63,22 +63,22 @@ else
     {
 
 
-//    $( "#adver" ).addClass( "rm-back" );
-//     $( "#adver" ).addClass( "page" );
-//     $( "#adver" ).removeClass( "rm-back2" );
-//      $("#adver").show();
-//      $("#adver").attr('style', 'display: inherit !important;' );
+   $( "#adver" ).addClass( "rm-back" );
+    $( "#adver" ).addClass( "page" );
+    $( "#adver" ).removeClass( "rm-back2" );
+   $("#adver").show();
+     $("#adver").attr('style', 'display: inherit !important;' );
  
-//       $( "#resume" ).removeClass( "rm-back" );
-//       $( "#resume" ).addClass( "rm-back2" );
-//       $( "#resume" ).removeClass( "page" );
-//  $("#resume").hide();
-//     // $( "#adver" ).addClass( "rm-back" );
-//     // $( "#adver" ).addClass( "page" );
-//       $( "#portfolio" ).addClass( "rm-middle2" );
-//     $( "#portfolio" ).removeClass( "rm-middle" );
+      $( "#resume" ).removeClass( "rm-back" );
+      $( "#resume" ).addClass( "rm-back2" );
+     $( "#resume" ).removeClass( "page" );
+ $("#resume").hide();
+    $( "#adver" ).addClass( "rm-back" );
+   $( "#adver" ).addClass( "page" );
+      $( "#portfolio" ).addClass( "rm-middle2" );
+    $( "#portfolio" ).removeClass( "rm-middle" );
         $(window).trigger('resize');
-    // $("#adver").show();
+   $("#adver").show();
    
 
     }
