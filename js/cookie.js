@@ -18,14 +18,16 @@
 // }
 $(document).ready(function(){
 var result="";
-var x="";
+
 var req1 =  $.getJSON("https://jsonip.com/?callback=?", function (data) {
       
         result=data.ip;
     });
   
 $.when(req1).done(function(){
+var x="";
 x =Cookies.get(result);
+
 if (x=="si")
     {
     // $( "#adver" ).removeClass( "rm-back" );
