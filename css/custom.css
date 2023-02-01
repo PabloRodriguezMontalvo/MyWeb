@@ -117,3 +117,20 @@
        display: inline-block;
 }
     .top-buffer { margin-bottom:20px; }
+
+.iconos-caja {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 500px;
+ 
+    }
+    .iconos-caja-content{
+      display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+
+    margin: 5%;
+    }
