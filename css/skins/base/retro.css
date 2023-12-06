@@ -6,11 +6,11 @@
  
 /* BODY */
 body, input, textarea, select, button, html input[type="button"], input[type="reset"], input[type="submit"], .work-desc h5
-{ font-family: Lora, Georgia, "Times New Roman", Times, serif; }
+{ font-family: Lora, Georgia, "Times New Roman", Times, serif;  }
  
 /* HEADINGS */
 h1, h2, h3
-{ font-family: "Arvo", serif; }
+{ font-family: "Arvo", serif;  word-break: break-all;}
 
 /* General */
 .content h2 { font-size: 2.2em; }
