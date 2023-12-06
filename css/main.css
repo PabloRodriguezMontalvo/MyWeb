@@ -541,7 +541,7 @@ a.ribbon:hover { color: #000; }
    ---------------------------------- */
 
 /* WIDTH 420 */
-.w420 h2 { font-size: 1.6em; }
+.w420 h2 { font-size: 1em; }
 .w420 .letter-info { float: none; text-align: center; margin-left: 0;}
 .w420 .stamp { float: none; margin: 0 auto;}
 .w420 .contact-form label { float: none; width: 100%; }
@@ -587,6 +587,7 @@ a.ribbon:hover { color: #000; }
 
 /* PHONES */
 @media screen and (max-width: 560px) {
+	h2{ font-size: .9em;}
 	#header nav ul a { line-height:60px; font-size: 17px; }
 	.content { padding: 2em 1.2em; }
 	.cover .widget-twitter { display: none; }
