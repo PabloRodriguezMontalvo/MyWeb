@@ -33,7 +33,7 @@ img { width:auto; max-width:100%; height:auto; }
 /* -------------------------------------------- */
 /* TYPOGRAPHY */
 /* headings and paragraphs */
-h1, h2, h3, h4, h5, h6 { font-weight: 400; }
+h1, h2, h3, h4, h5, h6 { font-weight: 400; word-break: break-all; }
 h1 { font-size: 2.20em; margin: 0.8em 0 0.4em 0; }
 h2 { font-size: 2.00em; margin: 1.0em 0 0.8em 0; }
 h3 { font-size: 1.10em; margin: 1.0em 0 .6em 0; }
