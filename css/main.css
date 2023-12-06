@@ -345,7 +345,7 @@ box-shadow: 0 0 10px #555;
 }
 .social { padding:0; margin:2em 0; list-style:none; text-align: center; }
 .social li { display:inline-block; padding:0; margin-bottom: -3px; }
-.social li a { margin: 0 .1em .2em 0; line-height:100%; text-align:center; font-family: 'JustVectorRegular'; font-size:35px; padding: 15px 15px 12px 14px; color:#444; border-radius: 50%; border: 1px solid #ddd; }
+.social li a { margin: 0 .1em .2em 0; line-height:100%; text-align:center; font-family: 'JustVectorRegular'; font-size:3em; padding: 15px 15px 12px 14px; color:#444; border-radius: 50%; border: 1px solid #ddd; }
 
 .social li a.facebook:before { content: 'X'; }
 .social li a.twitter:before { content: '_'; }
@@ -392,7 +392,8 @@ box-shadow: 0 0 10px #555;
 .social li a.friendfeed:hover { background-color: #2f72c4; }
 .social li a.github:hover { background-color: #000; }
 .social li a.wordpress:hover { background-color: #0083b3; }
-.social li a.instagram:hover { background-color:#3f729b; }
+.social li a.instagram:hover { background-color:#7f9b3f; }
+.social li a.cv:hover { background-color:#206d99; }
 .social li a.pinterest:before { content: "\f0d2"; }
 .social li a.instagram:before { content: "\f083"; }
 
