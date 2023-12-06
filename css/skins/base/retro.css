@@ -10,7 +10,7 @@ body, input, textarea, select, button, html input[type="button"], input[type="re
  
 /* HEADINGS */
 h1, h2, h3
-{ font-family: "Arvo", serif;  word-break: break-all; }
+{ font-family: "Arvo", serif;  }
 
 /* General */
 .content h2 { font-size: 2.2em; }
